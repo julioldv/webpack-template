@@ -3,6 +3,7 @@ import globals from "globals";
 
 export default [
   js.configs.recommended,
+
   {
     files: ["src/**/*.js"],
     languageOptions: {
@@ -10,6 +11,17 @@ export default [
       sourceType: "module",
       globals: {
         ...globals.browser,
+      },
+    },
+  },
+
+  {
+    files: ["**/*.{test,spec}.js"],
+    languageOptions: {
+      ecmaVersion: "latest",
+      sourceType: "module",
+      globals: {
+        ...globals.jest,
       },
     },
   },
